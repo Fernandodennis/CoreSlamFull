@@ -17,7 +17,7 @@ class AuthController extends Controller
         if (!Auth::attempt($credentials)) {
             return response([
                 'message' => 'Email address or password aint legit'
-            ]);
+            ], 422);
         }
         /**@var User $user */
         $user = Auth::user();

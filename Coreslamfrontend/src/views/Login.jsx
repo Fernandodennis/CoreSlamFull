@@ -16,16 +16,22 @@ export default function Login() {
             email: emailRef.current.value,
             password: passwordRef.current.value,
         }
-        axiosClient.post('/signup', payload)
+        setErrors(null)
+        axiosClient.post('/login', payload)
         .then(({data}) => {
             setUser(data.user)
             setToken(data.token)
         })
         .catch(err => {
-            console.log(err)
             const response = err.response;
             if (response && response.status === 422) { 
+                if (response.data.errors) {
                 setErrors(response.data.errors);
+                } else {
+                    setErrors({
+                        email: [response.data.message]
+                    });
+                }
             }
         })
     }
