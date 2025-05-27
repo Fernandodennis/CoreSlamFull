@@ -44,7 +44,7 @@ export default function Users() {
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Name</th>
+                            <th>Username</th>
                             <th>Email</th>
                             <th>Create Date</th>
                             <th>Actions</th>
@@ -62,7 +62,7 @@ export default function Users() {
                         {users.map(u => (
                             <tr>
                                 <td>{u.id}</td>
-                                <td>{u.name}</td>
+                                <td>{u.username}</td>
                                 <td>{u.email}</td>
                                 <td>{u.created_at}</td>
                                 <td>

@@ -46,6 +46,7 @@ export default function Signup() {
                         ))}
                     </div>
                     }
+                    
                     <input ref={usernameRef} placeholder="Username" />
                     <input ref={emailRef} type="email" placeholder="Email" />
                     <input ref={passwordRef} type="password" placeholder="Password" />
