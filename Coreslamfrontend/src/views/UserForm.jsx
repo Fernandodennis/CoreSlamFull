@@ -48,7 +48,7 @@ export default function UserForm() {
             })
 
         } else {
-            axiosClient.put(`/users`, user)
+            axiosClient.post(`/users`, user)
             .then(() => {
                 navigate('/users')
             })
